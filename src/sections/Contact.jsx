@@ -2,10 +2,6 @@ import React from 'react';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
 
 const Contact = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Thanks for reaching out! (Integrate Formspree or EmailJS here)");
-  };
 
   return (
     <Container id="contact" className="py-5">
