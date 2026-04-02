@@ -13,10 +13,10 @@ const Projects = () => {
       tags: ["React.js", "MongoDB", "Node.js", "Express.js"] 
     },
     {
-      title: "Calculator Pro",
+      title: "Basic Calculator",
       description: "A sleek, functional basic calculator built with HTML, CSS, and JavaScript. Features a clean UI and responsive design.",
       githubLink: "https://github.com/tprateek01/calculator-pro",
-      liveLink: "https://tprateek01.github.io/calculator-pro/",
+      liveLink: "https://basic-functionality-calculator.vercel.app/",
       image: "/project-images/Calculator.png",
       tags: ["HTML", "CSS", "JavaScript"]
     },
@@ -24,7 +24,7 @@ const Projects = () => {
       title: "Music Player",
       description: "A custom web-based music player featuring play/pause functionality, track seeking, and a dynamic interface.",
       githubLink: "https://github.com/tprateek01/Music-player-project",
-      liveLink: "https://tprateek01.github.io/Music-player-project/",
+      liveLink: "https://five-song-music-player.vercel.app/",
       image: "/project-images/MusicPlayer.png",
       tags: ["JavaScript", "HTML", "CSS"]
     },
