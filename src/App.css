@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
+/* Enable Smooth Scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Offset for Sticky Navbar - Adjust '70px' to your actual Navbar height */
+section, #home, #about, #projects, #contact {
+  scroll-margin-top: 70px; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Sticky Footer Logic */
+#root, .App {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+main {
+  flex: 1 0 auto; /* This pushes the footer down */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer {
+  flex-shrink: 0;
+}
+.footer-links a:hover {
+  color: #0d6efd !important; /* Changes text color to primary blue on hover */
+  padding-left: 5px;
+  transition: all 0.3s ease;
+}
+
+footer hr {
+  opacity: 0.1;
+}
+/* Project Card Polish */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+}
+
+/* Optional: Custom Scrollbar for the whole page */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #0d6efd;
+  border-radius: 10px;
 }
