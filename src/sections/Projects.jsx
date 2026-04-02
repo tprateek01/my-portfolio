@@ -31,7 +31,7 @@ const Projects = () => {
     {
       title: "Portfolio Website",
       description: "Built with React, Bootstrap, and AOS. Fully responsive with smooth scroll animations.",
-      githubLink: "https://github.com/tprateek01/",
+      githubLink: "https://github.com/tprateek01/my-portfolio",
       liveLink: "#",
       image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=500",
       tags: ["React", "Bootstrap", "AOS"]
