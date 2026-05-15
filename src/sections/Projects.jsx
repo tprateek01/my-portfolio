@@ -8,7 +8,7 @@ const Projects = () => {
       title: "DigiFarm",
       description: "A MERN stack platform connecting farmers and merchants to streamline agricultural trade.",
       githubLink: "https://github.com/tprateek01/DigiFarm_Project", 
-      liveLink: "#",
+      liveLink: "https://digi-farm-project.vercel.app/",
       image: "/project-images/DigiFarm.png",
       tags: ["React.js", "MongoDB", "Node.js", "Express.js"] 
     },
