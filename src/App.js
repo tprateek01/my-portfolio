@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Navigation from './components/Navbar';
 import Main from './sections/Main';
 import About from './sections/About';
+import Experience from './sections/Experience';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 import Footer from './components/Footer';
@@ -31,6 +32,8 @@ function App() {
         </section>
         
         <About /> {/* Ensure About.jsx has id="about" on its <section> */}
+
+        <Experience /> {/* Internship history, id="experience" */}
         
         <Projects /> {/* Ensure Projects.jsx has id="projects" on its <section> */}
         

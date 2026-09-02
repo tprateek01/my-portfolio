@@ -3,9 +3,9 @@ import { Container, Row, Col, Image } from 'react-bootstrap';
 
 const About = () => {
   const skillCategories = [
-    { name: "Frontend", skills: ['React', 'JavaScript', 'Bootstrap', 'HTML5/CSS3'] },
-    { name: "Languages & Core", skills: ['Java', 'DSA', 'SQL'] },
-    { name: "Tools", skills: ['Git', 'GitHub', 'VS Code', 'Vite'] }
+    { name: "Languages & Core", skills: ['Java', 'C++', 'C#', 'Python', 'JavaScript', 'DSA'] },
+    { name: "Web Development", skills: ['ASP.NET Core', 'React.js', 'Node.js', 'Express.js', 'Tailwind CSS'] },
+    { name: "Databases & Cloud", skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Docker', 'Git/GitHub'] }
   ];
 
   return (
@@ -33,16 +33,18 @@ const About = () => {
           {/* Text Column */}
           <Col md={7} data-aos="fade-left">
             <h2 className="fw-bold mb-2">About Me</h2>
-            <p className="lead text-primary mb-3">4th Year B.Tech Student at GNCT</p>
+            <p className="lead text-primary mb-3">B.Tech CSE Student, GNCT (AKTU) &middot; GATE 2026 Qualified</p>
             
             <div className="pe-lg-5">
               <p className="mb-2">
-                I am a passionate Frontend Developer based in Greater Noida, specializing in 
-                responsive web applications and <strong>Data Structures and Algorithms</strong>.
+                I'm a full-stack developer based in Greater Noida with hands-on experience building
+                scalable web applications using <strong>ASP.NET Core, React, and Node.js</strong> across
+                three corporate internships, including an ongoing role at Havells India Limited.
               </p>
               <p className="mb-4">
-                During my internship at Unified Mentor, I focused on intuitive user interfaces. 
-                Outside of coding in Java, I enjoy <em>Clash of Clans</em> and <em>Among Us</em>.
+                Beyond shipping production features, I spend my time solving algorithmic problems
+                — I completed GeeksforGeeks' 160-day DSA challenge — and exploring how AI tools like
+                Power BI and IBM SkillsBuild can be woven into everyday engineering workflows.
               </p>
             </div>
             

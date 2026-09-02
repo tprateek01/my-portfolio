@@ -5,6 +5,22 @@ import ProjectCard from '../components/ProjectCard';
 const Projects = () => {
   const myWork = [
     {
+      title: "Mocksy – Mock Test Generator",
+      description: "A responsive web platform and PWA that converts study material into timed, interactive tests with instant analytics, score tracking, and multilingual UI support.",
+      githubLink: "#", // TODO: add repo link
+      liveLink: "https://mocksy-app.vercel.app/",
+      image: null, // TODO: add a screenshot to public/project-images
+      tags: ["React.js", "Node.js", "Express", "Tailwind CSS"]
+    },
+    {
+      title: "Student Management System",
+      description: "An enterprise academic portal with role-based auth for Admins and Students, automated department workflows, profile management, and a Dockerized deployment.",
+      githubLink: "#", // TODO: add repo link
+      liveLink: "https://studentmanagementsystem-jxvs.onrender.com/",
+      image: null, // TODO: add a screenshot to public/project-images
+      tags: ["ASP.NET Core MVC", "PostgreSQL", "EF Core", "Docker"]
+    },
+    {
       title: "DigiFarm",
       description: "A MERN stack platform connecting farmers and merchants to streamline agricultural trade.",
       githubLink: "https://github.com/tprateek01/DigiFarm_Project", 

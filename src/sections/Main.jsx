@@ -18,7 +18,7 @@ const Main = () => {
             Hi, I'm <span className="text-primary">Prateek Tripathi</span>
         </h1>
         <p className="lead mb-4" data-aos="fade-up" data-aos-delay="200">
-            A Frontend Developer passionate about building clean, functional, and user-centric applications.
+            A Full-Stack Developer building scalable web applications with ASP.NET Core, React, and Node.js.
         </p>
         <div className="d-flex flex-wrap justify-content-center gap-3">
             <Button variant="primary" size="lg" href="#projects" data-aos="zoom-in" data-aos-delay="400">
