@@ -9,7 +9,7 @@ const Projects = () => {
       description: "A responsive web platform and PWA that converts study material into timed, interactive tests with instant analytics, score tracking, and multilingual UI support.",
       githubLink: "https://github.com/tprateek01/Mock-Test-Generator",
       liveLink: "https://mocksy-app.vercel.app/",
-      image: null, // TODO: add a screenshot to public/project-images
+      image: "/project-images/Mocksy.png",
       tags: ["React.js", "Node.js", "Express", "Tailwind CSS"]
     },
     {
@@ -17,7 +17,7 @@ const Projects = () => {
       description: "An enterprise academic portal with role-based auth for Admins and Students, automated department workflows, profile management, and a Dockerized deployment.",
       githubLink: "https://github.com/tprateek01/StudentManagementSystem",
       liveLink: "https://studentmanagementsystem-jxvs.onrender.com/",
-      image: null, // TODO: add a screenshot to public/project-images
+      image: "/project-images/StudentManagementSystem.png",
       tags: ["ASP.NET Core MVC", "PostgreSQL", "EF Core", "Docker"]
     },
     {
