@@ -30,10 +30,15 @@ const Experience = () => {
     <section id="experience" className="py-5">
       <Container fluid="lg">
         <h2 className="text-center mb-5 fw-bold" data-aos="fade-up">Internship Experience</h2>
+
+        {/* Decorative connecting line, visible on large screens only */}
+        <div className="timeline-track d-none d-lg-block" aria-hidden="true" />
+
         <Row className="g-4">
           {roles.map((role, index) => (
-            <Col md={4} key={role.company} data-aos="fade-up" data-aos-delay={index * 100}>
-              <div className="h-100 p-4 rounded shadow-sm border-start border-primary border-4 bg-white">
+            <Col md={4} key={role.company} data-aos="fade-up" data-aos-delay={index * 150}>
+              <div className="timeline-node mx-auto mb-3 d-none d-lg-flex">{index + 1}</div>
+              <div className="h-100 p-4 rounded shadow-sm border-start border-primary border-4 bg-white exp-card">
                 <p className="text-muted small mb-1 fw-bold text-uppercase">{role.period}</p>
                 <h5 className="fw-bold mb-1">{role.company}</h5>
                 <p className="text-primary mb-2" style={{ fontSize: '0.9rem' }}>{role.title}</p>

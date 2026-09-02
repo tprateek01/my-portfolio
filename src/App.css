@@ -5,7 +5,7 @@ html {
 
 /* Offset for Sticky Navbar - Adjust '70px' to your actual Navbar height */
 section, #home, #about, #projects, #contact {
-  scroll-margin-top: 70px; 
+  scroll-margin-top: 70px;
 }
 
 /* Sticky Footer Logic */
@@ -17,13 +17,17 @@ section, #home, #about, #projects, #contact {
 
 main {
   flex: 1 0 auto; /* This pushes the footer down */
+  position: relative;
+  z-index: 1;
 }
 
 footer {
   flex-shrink: 0;
+  position: relative;
+  z-index: 1;
 }
 .footer-links a:hover {
-  color: #0d6efd !important; /* Changes text color to primary blue on hover */
+  color: #0d6efd !important;
   padding-left: 5px;
   transition: all 0.3s ease;
 }
@@ -31,14 +35,14 @@ footer {
 footer hr {
   opacity: 0.1;
 }
-/* Project Card Polish */
-.project-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+footer a {
+  display: inline-block;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+footer a:hover {
+  transform: translateY(-4px) scale(1.15);
+  color: #66b2ff !important;
 }
 
 /* Optional: Custom Scrollbar for the whole page */
@@ -51,4 +55,399 @@ footer hr {
 ::-webkit-scrollbar-thumb {
   background: #0d6efd;
   border-radius: 10px;
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===================================================================
+   BODY WASH + AMBIENT PARTICLE BACKGROUND
+=================================================================== */
+body {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f7ff 45%, #ffffff 100%);
+}
+
+.bg-particles {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* ===================================================================
+   SCROLL PROGRESS BAR
+=================================================================== */
+.scroll-progress-track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  z-index: 1060;
+}
+
+.scroll-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0d6efd, #66b2ff, #0dcaf0, #0d6efd);
+  background-size: 300% 100%;
+  animation: shimmerMove 4s linear infinite;
+  transition: width 0.1s ease-out;
+}
+
+@keyframes shimmerMove {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 300% 0%; }
+}
+
+/* ===================================================================
+   BACK TO TOP BUTTON
+=================================================================== */
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: #0d6efd;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 18px rgba(13, 110, 253, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, background 0.25s ease;
+  z-index: 1040;
+  cursor: pointer;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.back-to-top:hover {
+  background: #0b5ed7;
+  transform: translateY(-4px) scale(1.08);
+}
+
+.back-to-top svg {
+  transition: transform 0.25s ease;
+}
+.back-to-top:hover svg {
+  transform: translateY(-2px);
+}
+
+/* ===================================================================
+   NAVBAR — shrink / blur on scroll + animated underline links
+=================================================================== */
+.custom-navbar {
+  transition: padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.navbar-scrolled {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+  background-color: rgba(33, 37, 41, 0.92) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.nav-underline .nav-link {
+  position: relative;
+  margin: 0 0.25rem;
+  transition: color 0.25s ease;
+}
+
+.nav-underline .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 0%;
+  height: 2px;
+  background: #0d6efd;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-underline .nav-link:hover::after,
+.nav-underline .nav-link:focus::after {
+  width: 80%;
+  left: 10%;
+}
+
+/* ===================================================================
+   HERO SECTION — animated gradient, floating orbs, typewriter
+=================================================================== */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #212529 0%, #0d6efd 50%, #212529 100%);
+  background-size: 220% 220%;
+  animation: gradientShift 14s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-orb-1 {
+  width: 280px;
+  height: 280px;
+  background: #66b2ff;
+  top: -60px;
+  left: -60px;
+  animation: floatOrb 9s ease-in-out infinite;
+}
+
+.hero-orb-2 {
+  width: 220px;
+  height: 220px;
+  background: #ffffff;
+  bottom: -40px;
+  right: 10%;
+  animation: floatOrb 11s ease-in-out infinite reverse;
+}
+
+.hero-orb-3 {
+  width: 180px;
+  height: 180px;
+  background: #0dcaf0;
+  top: 30%;
+  right: -40px;
+  animation: floatOrb 7.5s ease-in-out infinite;
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -30px); }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #66b2ff, #ffffff, #66b2ff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  animation: gradientTextMove 4s linear infinite;
+}
+
+@keyframes gradientTextMove {
+  to { background-position: 200% center; }
+}
+
+.typed-role {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.typed-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blinkCursor 1s step-end infinite;
+}
+
+@keyframes blinkCursor {
+  50% { opacity: 0; }
+}
+
+.hero-btn {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.hero-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ===================================================================
+   ABOUT SECTION — rotating ring + bobbing photo + skill badges
+=================================================================== */
+.profile-image-wrap {
+  position: relative;
+}
+
+.profile-ring {
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #0d6efd, #66b2ff, #0dcaf0, #0d6efd);
+  animation: spinRing 6s linear infinite;
+  z-index: 0;
+  filter: blur(1px);
+}
+
+@keyframes spinRing {
+  to { transform: rotate(360deg); }
+}
+
+.profile-image {
+  position: relative;
+  z-index: 1;
+  animation: bobImage 4s ease-in-out infinite;
+}
+
+@keyframes bobImage {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes badgePop {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.skill-badge {
+  animation: badgePop 0.5s ease both;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.skill-badge:hover {
+  transform: translateY(-3px) scale(1.05);
+  background-color: #0d6efd !important;
+}
+
+/* ===================================================================
+   EXPERIENCE SECTION — timeline nodes + hover lift
+=================================================================== */
+.timeline-track {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #0d6efd, transparent);
+  margin: 0 8% 40px;
+}
+
+.timeline-node {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #0d6efd;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
+  animation: nodePulse 2.4s ease-in-out infinite;
+}
+
+@keyframes nodePulse {
+  0%, 100% { box-shadow: 0 0 0 6px rgba(13, 110, 253, 0.15); }
+  50% { box-shadow: 0 0 0 10px rgba(13, 110, 253, 0.05); }
+}
+
+.exp-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* ===================================================================
+   PROJECT CARDS — 3D tilt, cursor glow, image zoom, shine buttons
+=================================================================== */
+.project-card-tilt {
+  position: relative;
+  transition: transform 0.15s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.project-card-tilt:hover {
+  box-shadow: 0 20px 40px rgba(13, 110, 253, 0.25) !important;
+}
+
+.project-card-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(220px circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(13, 110, 253, 0.18), transparent 70%);
+  z-index: 2;
+}
+
+.project-card-tilt:hover .project-card-glow {
+  opacity: 1;
+}
+
+.project-card-img {
+  transition: transform 0.4s ease;
+}
+
+.project-card-tilt:hover .project-card-img {
+  transform: scale(1.08);
+}
+
+.tag-badge {
+  animation: badgePop 0.4s ease both;
+}
+
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transform: skewX(-20deg);
+}
+
+.btn-shine:hover::after {
+  animation: shineSweep 0.8s ease;
+}
+
+@keyframes shineSweep {
+  from { left: -75%; }
+  to { left: 125%; }
+}
+
+/* ===================================================================
+   CONTACT SECTION — focus glow on floating inputs
+=================================================================== */
+.contact-form .form-control {
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.contact-form .form-control:focus {
+  box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.15);
+  border-color: #0d6efd;
 }

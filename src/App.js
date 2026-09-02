@@ -6,6 +6,9 @@ import Experience from './sections/Experience';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 import Footer from './components/Footer';
+import AnimatedBackground from './components/AnimatedBackground';
+import ScrollProgressBar from './components/ScrollProgressBar';
+import BackToTop from './components/BackToTop';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,14 +17,21 @@ import './App.css';
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 900,
       once: true,
       mirror: false,
+      easing: 'ease-out-cubic',
     });
   }, []);
 
   return (
     <div className="App">
+      {/* Ambient animated particle background, sits behind all content */}
+      <AnimatedBackground />
+
+      {/* Thin gradient bar showing scroll progress */}
+      <ScrollProgressBar />
+
       {/* Navbar stays at the top */}
       <Navigation />
 
@@ -30,18 +40,21 @@ function App() {
         <section id="home">
           <Main />
         </section>
-        
+
         <About /> {/* Ensure About.jsx has id="about" on its <section> */}
 
         <Experience /> {/* Internship history, id="experience" */}
-        
+
         <Projects /> {/* Ensure Projects.jsx has id="projects" on its <section> */}
-        
+
         <Contact /> {/* Ensure Contact.jsx has id="contact" on its <section> */}
       </main>
 
       {/* Footer stays at the very bottom */}
       <Footer />
+
+      {/* Floating scroll-to-top button */}
+      <BackToTop />
     </div>
   );
 }

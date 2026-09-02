@@ -7,7 +7,7 @@ const Projects = () => {
     {
       title: "Mocksy – Mock Test Generator",
       description: "A responsive web platform and PWA that converts study material into timed, interactive tests with instant analytics, score tracking, and multilingual UI support.",
-      githubLink: "#", // TODO: add repo link
+      githubLink: "https://github.com/tprateek01/Mock-Test-Generator",
       liveLink: "https://mocksy-app.vercel.app/",
       image: null, // TODO: add a screenshot to public/project-images
       tags: ["React.js", "Node.js", "Express", "Tailwind CSS"]
@@ -15,7 +15,7 @@ const Projects = () => {
     {
       title: "Student Management System",
       description: "An enterprise academic portal with role-based auth for Admins and Students, automated department workflows, profile management, and a Dockerized deployment.",
-      githubLink: "#", // TODO: add repo link
+      githubLink: "https://github.com/tprateek01/StudentManagementSystem",
       liveLink: "https://studentmanagementsystem-jxvs.onrender.com/",
       image: null, // TODO: add a screenshot to public/project-images
       tags: ["ASP.NET Core MVC", "PostgreSQL", "EF Core", "Docker"]
@@ -23,10 +23,10 @@ const Projects = () => {
     {
       title: "DigiFarm",
       description: "A MERN stack platform connecting farmers and merchants to streamline agricultural trade.",
-      githubLink: "https://github.com/tprateek01/DigiFarm_Project", 
+      githubLink: "https://github.com/tprateek01/DigiFarm_Project",
       liveLink: "https://digi-farm-project.vercel.app/",
       image: "/project-images/DigiFarm.png",
-      tags: ["React.js", "MongoDB", "Node.js", "Express.js"] 
+      tags: ["React.js", "MongoDB", "Node.js", "Express.js"]
     },
     {
       title: "Basic Calculator",
@@ -43,14 +43,6 @@ const Projects = () => {
       liveLink: "https://five-song-music-player.vercel.app/",
       image: "/project-images/MusicPlayer.png",
       tags: ["JavaScript", "HTML", "CSS"]
-    },
-    {
-      title: "Portfolio Website",
-      description: "Built with React, Bootstrap, and AOS. Fully responsive with smooth scroll animations.",
-      githubLink: "https://github.com/tprateek01/my-portfolio",
-      liveLink: "https://prateek-tripathi-portfolio.vercel.app",
-      image: "/project-images/Portfolio.png",
-      tags: ["React", "Bootstrap", "AOS"]
     }
   ];
 
@@ -61,9 +53,10 @@ const Projects = () => {
         {/* Row setup: 1 col on mobile, 2 on tablet, 4 on desktop */}
         <Row xs={1} md={2} lg={4} className="g-4">
           {myWork.map((project, index) => (
-            <ProjectCard 
+            <ProjectCard
               key={index}
               {...project}
+              delay={(index % 4) * 100}
             />
           ))}
         </Row>

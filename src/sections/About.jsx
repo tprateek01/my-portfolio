@@ -14,18 +14,19 @@ const About = () => {
         <Row className="align-items-center">
           {/* Image Column */}
           <Col md={5} data-aos="fade-right" className="text-center">
-            <div className="position-relative d-inline-block">
-              <Image 
-                src="project-images/Prateek_Image.jpeg" 
-                alt="Prateek Tripathi" 
-                className="shadow-lg border border-5 border-white"
-                style={{ 
-                  width: '320px', 
-                  height: '320px', 
-                  objectFit: 'cover', 
+            <div className="position-relative d-inline-block profile-image-wrap">
+              <div className="profile-ring" aria-hidden="true" />
+              <Image
+                src="project-images/Prateek_Image.jpeg"
+                alt="Prateek Tripathi"
+                className="shadow-lg border border-5 border-white profile-image"
+                style={{
+                  width: '320px',
+                  height: '320px',
+                  objectFit: 'cover',
                   objectPosition: 'top', // Keeps your face centered
-                  borderRadius: '50%' 
-                }} 
+                  borderRadius: '50%'
+                }}
               />
             </div>
           </Col>
@@ -34,7 +35,7 @@ const About = () => {
           <Col md={7} data-aos="fade-left">
             <h2 className="fw-bold mb-2">About Me</h2>
             <p className="lead text-primary mb-3">B.Tech CSE Student, GNCT (AKTU) &middot; GATE 2026 Qualified</p>
-            
+
             <div className="pe-lg-5">
               <p className="mb-2">
                 I'm a full-stack developer based in Greater Noida with hands-on experience building
@@ -47,15 +48,19 @@ const About = () => {
                 Power BI and IBM SkillsBuild can be woven into everyday engineering workflows.
               </p>
             </div>
-            
+
             <h5 className="fw-bold mb-3">Technical Expertise</h5>
             <Row>
               {skillCategories.map((cat) => (
                 <Col xs={6} lg={4} key={cat.name} className="mb-3">
                   <h6 className="text-muted small text-uppercase fw-bold mb-2">{cat.name}</h6>
                   <div className="d-flex flex-wrap gap-1">
-                    {cat.skills.map(skill => (
-                      <span key={skill} className="badge bg-dark fw-normal" style={{ fontSize: '0.75rem' }}>
+                    {cat.skills.map((skill, i) => (
+                      <span
+                        key={skill}
+                        className="badge bg-dark fw-normal skill-badge"
+                        style={{ fontSize: '0.75rem', animationDelay: `${i * 0.05}s` }}
+                      >
                         {skill}
                       </span>
                     ))}
